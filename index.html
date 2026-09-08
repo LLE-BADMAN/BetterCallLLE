@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Better Call LLE | LLE BADMAN</title>
-
   <meta
     name="description"
     content="Better Call LLE — الملف الرسمي للمحامي LLE BADMAN"
   >
-
   <style>
     :root {
       --gold: #d6ad45;
@@ -23,17 +20,14 @@
       --line: rgba(255,255,255,0.09);
       --red: #8d2929;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       background: var(--black);
       color: var(--white);
@@ -46,30 +40,24 @@
         sans-serif;
       line-height: 1.8;
     }
-
     body::selection {
       background: var(--gold);
       color: #000;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
     button {
       font: inherit;
     }
-
     .container {
       width: min(1120px, 91%);
       margin: auto;
     }
-
     /* =========================
        TOP BAR
     ========================= */
-
     .top-bar {
       background: #050505;
       border-bottom: 1px solid var(--line);
@@ -78,17 +66,14 @@
       letter-spacing: 1.5px;
       padding: 8px 0;
     }
-
     .top-bar-inner {
       display: flex;
       justify-content: space-between;
       gap: 15px;
     }
-
     /* =========================
        NAVIGATION
     ========================= */
-
     nav {
       position: sticky;
       top: 0;
@@ -97,7 +82,6 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
-
     .nav-inner {
       min-height: 74px;
       display: flex;
@@ -105,15 +89,12 @@
       justify-content: space-between;
       gap: 20px;
     }
-
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 900;
     }
-
-    /* صورة الكارد */
     .brand-mark {
       width: 52px;
       height: 52px;
@@ -126,32 +107,27 @@
         0 0 25px rgba(214,173,69,0.08);
       flex-shrink: 0;
     }
-
     .brand-mark img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
     }
-
     .brand-text {
       display: flex;
       flex-direction: column;
       line-height: 1.2;
     }
-
     .brand-text strong {
       font-size: 15px;
       letter-spacing: 1px;
     }
-
     .brand-text small {
       color: var(--gold);
       font-size: 9px;
       letter-spacing: 2px;
       margin-top: 3px;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
@@ -159,26 +135,21 @@
       color: #aaa;
       font-size: 13px;
     }
-
     .nav-links a {
       transition: 0.2s ease;
     }
-
     .nav-links a:hover {
       color: var(--gold-light);
     }
-
     /* =========================
        HERO
     ========================= */
-
     .hero {
       min-height: 88vh;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
-
       background:
         linear-gradient(
           90deg,
@@ -186,15 +157,13 @@
           rgba(8,8,8,0.82) 45%,
           rgba(8,8,8,0.45) 100%
         ),
-        url("images/IMG_9459.jpeg") center/cover no-repeat;
+        url("IMG_9459.jpeg") center/cover no-repeat;
     }
-
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       opacity: 0.13;
-
       background-image:
         linear-gradient(
           rgba(255,255,255,0.035) 1px,
@@ -205,16 +174,13 @@
           rgba(255,255,255,0.035) 1px,
           transparent 1px
         );
-
       background-size: 55px 55px;
-
       mask-image: linear-gradient(
         to bottom,
         black,
         transparent
       );
     }
-
     .hero::after {
       content: "";
       position: absolute;
@@ -224,19 +190,16 @@
       border: 1px solid rgba(214,173,69,0.07);
       right: -180px;
       bottom: -200px;
-
       box-shadow:
         0 0 0 60px rgba(214,173,69,0.025),
         0 0 0 120px rgba(214,173,69,0.015);
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 820px;
       padding: 100px 0;
     }
-
     .case-stamp {
       display: inline-flex;
       align-items: center;
@@ -250,7 +213,6 @@
       margin-bottom: 28px;
       background: rgba(214,173,69,0.035);
     }
-
     .case-stamp::before {
       content: "";
       width: 6px;
@@ -259,7 +221,6 @@
       background: var(--gold);
       box-shadow: 0 0 10px var(--gold);
     }
-
     .hero h1 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(52px, 12vw, 108px);
@@ -268,29 +229,24 @@
       margin-bottom: 27px;
       max-width: 850px;
     }
-
     .hero h1 span {
       display: block;
       color: var(--gold-light);
     }
-
     .hero-subtitle {
       font-size: clamp(15px, 3vw, 20px);
       color: #aaa;
       max-width: 650px;
       margin-bottom: 36px;
     }
-
     .hero-subtitle strong {
       color: #ddd;
     }
-
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .button {
       display: inline-flex;
       justify-content: center;
@@ -303,38 +259,31 @@
       transition: 0.25s ease;
       border: 1px solid var(--line);
     }
-
     .button-gold {
       background: var(--gold);
       color: #090909;
       border-color: var(--gold);
     }
-
     .button-gold:hover {
       background: var(--gold-light);
       transform: translateY(-2px);
     }
-
     .button-dark {
       background: rgba(255,255,255,0.035);
       color: #eee;
     }
-
     .button-dark:hover {
       border-color: rgba(214,173,69,0.4);
       color: var(--gold-light);
     }
-
     /* =========================
        SECTION COMMON
     ========================= */
-
     section {
       padding: 105px 0;
       border-top: 1px solid var(--line);
       position: relative;
     }
-
     .section-kicker {
       color: var(--gold);
       font-size: 10px;
@@ -343,7 +292,6 @@
       margin-bottom: 10px;
       text-transform: uppercase;
     }
-
     .section-title {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(34px, 7vw, 58px);
@@ -351,17 +299,14 @@
       letter-spacing: -2px;
       margin-bottom: 17px;
     }
-
     .section-description {
       color: var(--muted);
       max-width: 700px;
       font-size: 15px;
     }
-
     /* =========================
        LAWYER
     ========================= */
-
     .lawyer-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -369,7 +314,6 @@
       align-items: center;
       margin-top: 55px;
     }
-
     .lawyer-image {
       min-height: 470px;
       border: 1px solid var(--line);
@@ -377,7 +321,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .lawyer-image img {
       width: 100%;
       height: 100%;
@@ -386,59 +329,49 @@
       object-fit: cover;
       object-position: center;
     }
-
     .lawyer-image::after {
       content: "";
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to top,
           rgba(0,0,0,0.35),
           transparent 45%
         );
-
       pointer-events: none;
     }
-
     .lawyer-info h3 {
       font-family: Georgia, serif;
       font-size: 34px;
       margin-bottom: 5px;
     }
-
     .lawyer-title {
       color: var(--gold);
       font-size: 12px;
       letter-spacing: 2px;
       margin-bottom: 25px;
     }
-
     .lawyer-info p {
       color: #aaa;
       font-size: 15px;
       margin-bottom: 25px;
     }
-
     .signature {
       color: var(--gold-light);
       font-family: cursive;
       font-size: 25px;
       margin-top: 25px;
     }
-
     /* =========================
        CASES
     ========================= */
-
     .cases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 50px;
     }
-
     .case-card {
       background:
         linear-gradient(
@@ -446,7 +379,6 @@
           rgba(255,255,255,0.055),
           rgba(255,255,255,0.015)
         );
-
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 27px;
@@ -455,12 +387,10 @@
       overflow: hidden;
       transition: 0.25s ease;
     }
-
     .case-card:hover {
       transform: translateY(-4px);
       border-color: rgba(214,173,69,0.35);
     }
-
     .case-card::after {
       content: "CASE FILE";
       position: absolute;
@@ -472,7 +402,6 @@
       font-weight: 900;
       letter-spacing: 3px;
     }
-
     .case-number {
       color: var(--gold);
       font-size: 10px;
@@ -480,13 +409,11 @@
       font-weight: 900;
       margin-bottom: 22px;
     }
-
     .case-card h3 {
       font-family: Georgia, serif;
       font-size: 24px;
       margin-bottom: 16px;
     }
-
     .case-status {
       display: inline-block;
       padding: 4px 9px;
@@ -496,13 +423,11 @@
       border-radius: 3px;
       margin-bottom: 17px;
     }
-
     .case-card p {
       color: #999;
       font-size: 13px;
       line-height: 1.9;
     }
-
     .case-result {
       margin-top: 18px;
       padding-top: 15px;
@@ -510,37 +435,27 @@
       color: #bbb;
       font-size: 12px;
     }
-
     .case-result strong {
       color: var(--gold-light);
     }
-
     /* =========================
        DEFENDANTS
     ========================= */
-
     .defendants {
       background: #0b0b0b;
     }
-
     .defendant-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 50px;
     }
-
-    /*
-      بطاقة القضية ذات الوجهين
-    */
-
     .defendant {
       perspective: 1200px;
       height: 480px;
       cursor: pointer;
       position: relative;
     }
-
     .defendant-inner {
       position: relative;
       width: 100%;
@@ -548,39 +463,31 @@
       transition: transform 0.75s cubic-bezier(.2,.75,.25,1);
       transform-style: preserve-3d;
     }
-
     .defendant.flipped .defendant-inner {
       transform: rotateY(180deg);
     }
-
     .defendant-front,
     .defendant-back {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-
       border: 1px solid var(--line);
       background: #101010;
       overflow: hidden;
-
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-
       box-shadow:
         0 15px 40px rgba(0,0,0,0.25);
     }
-
     .defendant-front {
       display: flex;
       flex-direction: column;
       text-align: center;
     }
-
     .defendant-front:hover {
       border-color: rgba(214,173,69,0.45);
     }
-
     .defendant-avatar {
       width: 100%;
       height: 340px;
@@ -589,7 +496,6 @@
       background: #080808;
       flex-shrink: 0;
     }
-
     .defendant-avatar img {
       width: 100%;
       height: 100%;
@@ -598,11 +504,9 @@
       object-position: center;
       transition: 0.4s ease;
     }
-
     .defendant-front:hover .defendant-avatar img {
       transform: scale(1.04);
     }
-
     .defendant-front h3 {
       font-family: Georgia, serif;
       font-size: 23px;
@@ -610,30 +514,23 @@
       margin-bottom: 3px;
       padding: 0 15px;
     }
-
     .defendant-front p {
       color: #777;
       font-size: 11px;
     }
-
     .click-hint {
       color: var(--gold);
       font-size: 10px;
       margin-top: 8px;
       opacity: 0.8;
     }
-
-    /* الوجه الخلفي */
-
     .defendant-back {
       transform: rotateY(180deg);
       padding: 28px;
       text-align: right;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       background:
         radial-gradient(
           circle at center,
@@ -642,7 +539,6 @@
         ),
         #0d0d0d;
     }
-
     .file-label {
       color: var(--gold);
       font-size: 10px;
@@ -650,14 +546,12 @@
       font-weight: 900;
       margin-bottom: 14px;
     }
-
     .defendant-back h3 {
       font-family: Georgia, serif;
       color: var(--gold-light);
       font-size: 26px;
       margin-bottom: 18px;
     }
-
     .back-status {
       display: inline-block;
       align-self: flex-start;
@@ -668,14 +562,12 @@
       font-size: 10px;
       margin-bottom: 20px;
     }
-
     .defendant-back p {
       color: #aaa;
       font-size: 13px;
       line-height: 2;
       margin-bottom: 18px;
     }
-
     .back-result {
       padding-top: 17px;
       border-top: 1px solid var(--line);
@@ -683,45 +575,37 @@
       font-size: 12px;
       line-height: 1.9;
     }
-
     .back-result strong {
       color: var(--gold-light);
     }
-
     .flip-hint {
       margin-top: 22px;
       color: #666;
       font-size: 10px;
       text-align: center;
     }
-
     /* =========================
        VIDEOS
     ========================= */
-
     .videos-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
       margin-top: 50px;
     }
-
     .video-card {
       border: 1px solid var(--line);
       background: #101010;
       overflow: hidden;
       transition: 0.25s ease;
     }
-
     .video-card:hover {
       border-color: rgba(214,173,69,0.35);
     }
-
     .video-top {
       height: 175px;
       display: grid;
       place-items: center;
-
       background:
         radial-gradient(
           circle,
@@ -729,11 +613,9 @@
           transparent 45%
         ),
         #080808;
-
       border-bottom: 1px solid var(--line);
       position: relative;
     }
-
     .play {
       width: 58px;
       height: 58px;
@@ -745,43 +627,35 @@
       font-size: 20px;
       padding-left: 3px;
     }
-
     .video-info {
       padding: 22px;
     }
-
     .video-number {
       color: var(--gold);
       font-size: 10px;
       letter-spacing: 2px;
       font-weight: 900;
     }
-
     .video-info h3 {
       font-size: 18px;
       margin: 7px 0 10px;
     }
-
     .video-info p {
       color: #777;
       font-size: 12px;
       margin-bottom: 17px;
     }
-
     .watch {
       color: var(--gold-light);
       font-size: 12px;
       font-weight: 800;
     }
-
     /* =========================
        MESSAGE
     ========================= */
-
     .message-box {
       margin-top: 50px;
       border: 1px solid rgba(214,173,69,0.28);
-
       background:
         radial-gradient(
           circle at center,
@@ -789,13 +663,11 @@
           transparent 55%
         ),
         #0c0c0c;
-
       padding: 55px 35px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-
     .message-box::before {
       content: "LLE";
       position: absolute;
@@ -808,26 +680,22 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
-
     .message-content {
       position: relative;
       z-index: 2;
     }
-
     .message-content h3 {
       font-family: Georgia, serif;
       font-size: 32px;
       color: var(--gold-light);
       margin-bottom: 25px;
     }
-
     .message-text {
       color: #ddd;
       font-size: 18px;
       line-height: 2.15;
       font-weight: 600;
     }
-
     .message-highlight {
       color: var(--gold-light);
       font-family: Georgia, serif;
@@ -835,41 +703,34 @@
       font-weight: 900;
       margin: 25px 0;
     }
-
     .message-phone {
       margin-top: 20px;
       color: #aaa;
       font-size: 14px;
     }
-
     /* =========================
        OFFICE
     ========================= */
-
     .office-card {
       margin-top: 50px;
       border: 1px solid var(--line);
-
       background:
         linear-gradient(
           135deg,
           #111,
           #0b0b0b
         );
-
       padding: 40px;
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 35px;
     }
-
     .office-icon {
       min-height: 280px;
       border: 1px solid var(--line);
       background: #080808;
       overflow: hidden;
     }
-
     .office-icon img {
       width: 100%;
       height: 100%;
@@ -877,18 +738,15 @@
       display: block;
       object-fit: cover;
     }
-
     .office-details h3 {
       font-family: Georgia, serif;
       font-size: 30px;
       margin-bottom: 20px;
     }
-
     .office-details p {
       color: #999;
       margin-bottom: 18px;
     }
-
     .address {
       padding: 15px 18px;
       border-right: 2px solid var(--gold);
@@ -896,14 +754,11 @@
       color: #ccc;
       font-size: 14px;
     }
-
     /* =========================
        CONTACT
     ========================= */
-
     .contact-section {
       text-align: center;
-
       background:
         radial-gradient(
           circle at center,
@@ -911,11 +766,9 @@
           transparent 42%
         );
     }
-
     .contact-section .section-description {
       margin: auto;
     }
-
     .contact-buttons {
       display: grid;
       grid-template-columns: repeat(3, minmax(180px, 1fr));
@@ -923,15 +776,12 @@
       gap: 12px;
       margin-top: 35px;
     }
-
     .social {
       min-width: 180px;
     }
-
     /* =========================
        FOOTER
     ========================= */
-
     footer {
       border-top: 1px solid var(--line);
       background: #050505;
@@ -939,184 +789,137 @@
       color: #666;
       font-size: 11px;
     }
-
     .footer-inner {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 20px;
     }
-
     .footer-brand {
       color: #ccc;
       font-weight: 900;
       letter-spacing: 1px;
     }
-
     .footer-brand span {
       color: var(--gold);
     }
-
     /* =========================
        MOBILE
     ========================= */
-
     @media (max-width: 800px) {
-
       .nav-links {
         display: none;
       }
-
       .hero {
         min-height: 80vh;
       }
-
       .hero h1 {
         letter-spacing: -3px;
       }
-
       section {
         padding: 80px 0;
       }
-
       .lawyer-grid,
       .office-card {
         grid-template-columns: 1fr;
       }
-
       .cases-grid,
       .defendant-grid {
         grid-template-columns: 1fr;
       }
-
       .videos-grid {
         grid-template-columns: 1fr;
       }
-
       .contact-buttons {
         grid-template-columns: 1fr;
       }
-
       .lawyer-image {
         min-height: 400px;
       }
-
       .lawyer-image img {
         min-height: 400px;
       }
-
       .office-card {
         padding: 22px;
       }
-
       .defendant {
         height: 500px;
       }
-
       .defendant-avatar {
         height: 350px;
       }
     }
-
     @media (max-width: 480px) {
-
       .top-bar {
         display: none;
       }
-
       .hero-content {
         padding: 70px 0;
       }
-
       .hero h1 {
         font-size: 56px;
       }
-
       .button {
         width: 100%;
       }
-
       .case-card {
         min-height: auto;
       }
-
       .video-top {
         height: 150px;
       }
-
       .brand-mark {
         width: 46px;
         height: 46px;
       }
-
       .message-box {
         padding: 40px 20px;
       }
-
       .message-text {
         font-size: 16px;
       }
-
       .message-highlight {
         font-size: 24px;
       }
-
       .defendant {
         height: 490px;
       }
-
       .defendant-avatar {
         height: 320px;
       }
-
       .defendant-back {
         padding: 23px;
       }
-
       .defendant-back h3 {
         font-size: 23px;
       }
-
       .defendant-back p {
         font-size: 12px;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- TOP BAR -->
-
   <div class="top-bar">
     <div class="container top-bar-inner">
       <span>CONFIDENTIAL • LLE BADMAN</span>
       <span>BETTER CALL LLE</span>
     </div>
   </div>
-
-
-  <!-- NAVIGATION -->
-
   <nav>
     <div class="container nav-inner">
-
       <a href="#home" class="brand">
-
         <div class="brand-mark">
           <img
-            src="images/IMG_9448.webp"
+            src="IMG_9448.webp"
             alt="Better Call LLE"
           >
         </div>
-
         <div class="brand-text">
           <strong>Better Call LLE</strong>
           <small>LLE BADMAN</small>
         </div>
-
       </a>
-
       <div class="nav-links">
         <a href="#lawyer">المحامي</a>
         <a href="#cases">القضايا</a>
@@ -1126,266 +929,167 @@
         <a href="#office">المكتب</a>
         <a href="#contact">التواصل</a>
       </div>
-
     </div>
   </nav>
-
-
   <main>
-
-    <!-- HERO -->
-
     <section class="hero" id="home">
-
       <div class="container">
-
         <div class="hero-content">
-
           <div class="case-stamp">
             LLE LAW OFFICE • OFFICIAL FILE
           </div>
-
           <h1>
             Better Call
             <span>LLE.</span>
           </h1>
-
           <p class="hero-subtitle">
             <strong>LLE BADMAN</strong>
             — محامي القضايا الصعبة.
             هنا تجد ملفات القضايا، الشخصيات،
             أبرز الظهورات والمقاطع المرتبطة بعالم LLE.
           </p>
-
           <div class="hero-buttons">
-
             <a href="#cases" class="button button-gold">
               استعرض القضايا
             </a>
-
             <a href="#lawyer" class="button button-dark">
               تعرف على المحامي
             </a>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- LAWYER -->
-
     <section id="lawyer">
-
       <div class="container">
-
         <div class="section-kicker">
           THE ATTORNEY
         </div>
-
         <h2 class="section-title">
           المحامي LLE BADMAN
         </h2>
-
         <p class="section-description">
           الاسم الذي يظهر عندما تصبح القضية بحاجة إلى
           محامٍ يعرف كيف يتعامل مع الموقف.
         </p>
-
-
         <div class="lawyer-grid">
-
           <div class="lawyer-image">
-
             <img
-              src="images/IMG_9459.jpeg"
+              src="IMG_9459.jpeg"
               alt="LLE BADMAN"
             >
-
           </div>
-
-
           <div class="lawyer-info">
-
             <h3>
               LLE BADMAN
             </h3>
-
             <div class="lawyer-title">
               ATTORNEY • LLE LAW OFFICE
             </div>
-
             <p>
               للي باد مان هو المحامي الذي ارتبط بعدد
               من القضايا والظهورات والمواقف التي أصبحت
               جزءًا من عالم LLE.
             </p>
-
             <p>
               من الدفاع عن الأشخاص إلى تقديم الاستشارات،
               يستعرض هذا الموقع ملفاته والقضايا التي
               مارسها وظهر فيها.
             </p>
-
             <div class="signature">
               — LLE
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- CASES -->
-
     <section id="cases">
-
       <div class="container">
-
         <div class="section-kicker">
           CASE FILES
         </div>
-
         <h2 class="section-title">
           القضايا
         </h2>
-
         <p class="section-description">
           أرشيف القضايا التي ظهر فيها LLE BADMAN
           وقدم فيها خدماته أو استشاراته.
         </p>
-
-
         <div class="cases-grid">
-
-
-          <!-- CASE 01 -->
-
           <article class="case-card">
-
             <div class="case-number">
               CASE 001
             </div>
-
             <h3>
               قضية عادل
             </h3>
-
             <div class="case-status">
               CLOSED
             </div>
-
             <p>
               اتهام بصدم إنسان مما أدى إلى وفاته.
               تم عرض خدمات LLE للدفاع عن عادل.
             </p>
-
             <div class="case-result">
               <strong>النتيجة:</strong>
               تم سجن عادل،
               وسُجن وسُحبت رخصة المحامي LLE.
             </div>
-
           </article>
-
-
-          <!-- CASE 02 -->
-
           <article class="case-card">
-
             <div class="case-number">
               CASE 002
             </div>
-
             <h3>
               استشارة معلم الشاورما
             </h3>
-
             <div class="case-status">
               CONSULTATION
             </div>
-
             <p>
               في ظل مواجهة معلم الشاورما لمحبي الشاورما
               وتوجيه السلاح في وجهه، طلب معلم الشاورما
               استشارة المحامي LLE.
             </p>
-
             <div class="case-result">
               <strong>النتيجة:</strong>
               تم تلبية الاستشارة وتقديم خدمات المحامي.
             </div>
-
           </article>
-
-
-          <!-- CASE 03 -->
-
           <article class="case-card">
-
             <div class="case-number">
               CASE 003
             </div>
-
             <h3>
               قضية المدير أودين
             </h3>
-
             <div class="case-status">
               ONGOING
             </div>
-
             <p>
               تم خداع المدير محمد أودين من قبل موظفه
               دربحة وتوقيعه على مستندات تتهمه.
             </p>
-
             <div class="case-result">
               <strong>النتيجة:</strong>
               يتم التعامل مع القضية حتى الآن.
             </div>
-
           </article>
-
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- DEFENDANTS -->
-
     <section class="defendants" id="defendants">
-
       <div class="container">
-
         <div class="section-kicker">
           CASE SUBJECTS
         </div>
-
         <h2 class="section-title">
           الشخصيات
         </h2>
-
         <p class="section-description">
           اضغط على الملف ليقلب ويظهر وجه القضية.
         </p>
-
-
         <div class="defendant-grid">
-
-
           <!-- عادل -->
-
           <div
             class="defendant"
             onclick="flipCase(this)"
@@ -1393,75 +1097,50 @@
             tabindex="0"
             onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
-
             <div class="defendant-inner">
-
-              <!-- FRONT -->
-
               <div class="defendant-front">
-
                 <div class="defendant-avatar">
                   <img
-                    src="images/IMG_9456.jpeg"
+                    src="IMG_9456.jpeg"
                     alt="عادل"
                   >
                 </div>
-
                 <h3>
                   عادل
                 </h3>
-
                 <p>
                   CASE 001
                 </p>
-
                 <div class="click-hint">
                   اضغط لقلب الملف
                 </div>
-
               </div>
-
-
-              <!-- BACK -->
-
               <div class="defendant-back">
-
                 <div class="file-label">
                   CASE FILE • 001
                 </div>
-
                 <h3>
                   قضية عادل
                 </h3>
-
                 <div class="back-status">
                   CLOSED
                 </div>
-
                 <p>
                   اتهام بصدم إنسان مما أدى إلى وفاته.
                   تم عرض خدمات LLE للدفاع عن عادل
                   والتعامل مع القضية.
                 </p>
-
                 <div class="back-result">
                   <strong>النتيجة:</strong>
                   تم سجن عادل، وسُجن وسُحبت رخصة المحامي LLE.
                 </div>
-
                 <div class="flip-hint">
                   اضغط للعودة إلى صورة الشخصية
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
-
           <!-- المدير أودين -->
-
           <div
             class="defendant"
             onclick="flipCase(this)"
@@ -1469,74 +1148,49 @@
             tabindex="0"
             onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
-
             <div class="defendant-inner">
-
-              <!-- FRONT -->
-
               <div class="defendant-front">
-
                 <div class="defendant-avatar">
                   <img
-                    src="images/IMG_9457.jpeg"
+                    src="IMG_9457.jpeg"
                     alt="المدير أودين"
                   >
                 </div>
-
                 <h3>
                   المدير أودين
                 </h3>
-
                 <p>
                   CASE 003
                 </p>
-
                 <div class="click-hint">
                   اضغط لقلب الملف
                 </div>
-
               </div>
-
-
-              <!-- BACK -->
-
               <div class="defendant-back">
-
                 <div class="file-label">
                   CASE FILE • 003
                 </div>
-
                 <h3>
                   قضية المدير أودين
                 </h3>
-
                 <div class="back-status">
                   ONGOING
                 </div>
-
                 <p>
                   تم خداع المدير محمد أودين من قبل موظفه
                   دربحة وتوقيعه على مستندات تتهمه.
                 </p>
-
                 <div class="back-result">
                   <strong>النتيجة:</strong>
                   يتم التعامل مع القضية حتى الآن.
                 </div>
-
                 <div class="flip-hint">
                   اضغط للعودة إلى صورة الشخصية
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
-
           <!-- معلم الشاورما -->
-
           <div
             class="defendant"
             onclick="flipCase(this)"
@@ -1544,127 +1198,81 @@
             tabindex="0"
             onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
-
             <div class="defendant-inner">
-
-              <!-- FRONT -->
-
               <div class="defendant-front">
-
                 <div class="defendant-avatar">
                   <img
-                    src="images/IMG_9458.jpeg"
+                    src="IMG_9458.jpeg"
                     alt="معلم الشاورما"
                   >
                 </div>
-
                 <h3>
                   معلم الشاورما
                 </h3>
-
                 <p>
                   CASE 002
                 </p>
-
                 <div class="click-hint">
                   اضغط لقلب الملف
                 </div>
-
               </div>
-
-
-              <!-- BACK -->
-
               <div class="defendant-back">
-
                 <div class="file-label">
                   CASE FILE • 002
                 </div>
-
                 <h3>
                   استشارة معلم الشاورما
                 </h3>
-
                 <div class="back-status">
                   CONSULTATION
                 </div>
-
                 <p>
                   في ظل مواجهة معلم الشاورما لمحبي الشاورما
                   وتوجيه السلاح في وجهه، طلب معلم الشاورما
                   استشارة المحامي LLE.
                 </p>
-
                 <div class="back-result">
                   <strong>النتيجة:</strong>
                   تم تلبية الاستشارة وتقديم خدمات المحامي.
                 </div>
-
                 <div class="flip-hint">
                   اضغط للعودة إلى صورة الشخصية
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- VIDEOS -->
-
     <section id="videos">
-
       <div class="container">
-
         <div class="section-kicker">
           VIDEO EVIDENCE
         </div>
-
         <h2 class="section-title">
           المقاطع
         </h2>
-
         <p class="section-description">
           أبرز الظهورات والمقاطع المرتبطة بقضايا
           LLE BADMAN.
         </p>
-
-
         <div class="videos-grid">
-
-
-          <!-- VIDEO 01 -->
-
           <article class="video-card">
-
             <div class="video-top">
               <div class="play">
                 ▶
               </div>
             </div>
-
             <div class="video-info">
-
               <div class="video-number">
                 VIDEO 01
               </div>
-
               <h3>
                 عرض خدماته للدفاع عن عادل
               </h3>
-
               <p>
                 ظهور LLE لتقديم خدماته والدفاع عن عادل.
               </p>
-
               <a
                 class="watch"
                 href="https://youtu.be/Rrnex28fUVE"
@@ -1673,36 +1281,24 @@
               >
                 مشاهدة المقطع ←
               </a>
-
             </div>
-
           </article>
-
-
-          <!-- VIDEO 02 -->
-
           <article class="video-card">
-
             <div class="video-top">
               <div class="play">
                 ▶
               </div>
             </div>
-
             <div class="video-info">
-
               <div class="video-number">
                 VIDEO 02
               </div>
-
               <h3>
                 الدفاع عن عادل
               </h3>
-
               <p>
                 القضية كاملة وتفاصيل ظهور LLE فيها.
               </p>
-
               <a
                 class="watch"
                 href="https://youtu.be/BVi_Cyxea8c"
@@ -1711,36 +1307,24 @@
               >
                 مشاهدة المقطع ←
               </a>
-
             </div>
-
           </article>
-
-
-          <!-- VIDEO 03 -->
-
           <article class="video-card">
-
             <div class="video-top">
               <div class="play">
                 ▶
               </div>
             </div>
-
             <div class="video-info">
-
               <div class="video-number">
                 VIDEO 03
               </div>
-
               <h3>
                 استشارة معلم الشاورما
               </h3>
-
               <p>
                 ظهور LLE في استشارة معلم الشاورما.
               </p>
-
               <a
                 class="watch"
                 href="https://youtu.be/s9Ee0wvJ6Vc"
@@ -1749,36 +1333,24 @@
               >
                 مشاهدة المقطع ←
               </a>
-
             </div>
-
           </article>
-
-
-          <!-- VIDEO 04 -->
-
           <article class="video-card">
-
             <div class="video-top">
               <div class="play">
                 ▶
               </div>
             </div>
-
             <div class="video-info">
-
               <div class="video-number">
                 VIDEO 04
               </div>
-
               <h3>
                 الدفاع عن قضية المدير أودين
               </h3>
-
               <p>
                 ظهور LLE للدفاع عن قضية المدير أودين.
               </p>
-
               <a
                 class="watch"
                 href="https://youtu.be/Qtfm7WPOK8Q"
@@ -1787,160 +1359,93 @@
               >
                 مشاهدة المقطع ←
               </a>
-
             </div>
-
           </article>
-
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- MESSAGE -->
-
     <section id="message">
-
       <div class="container">
-
         <div class="section-kicker">
           BETTER CALL LLE
         </div>
-
         <h2 class="section-title">
           رسالة للي
         </h2>
-
         <p class="section-description">
           عندك مشكلة؟ لا تشيل هم.
         </p>
-
-
         <div class="message-box">
-
           <div class="message-content">
-
             <h3>
               رسالة للي
             </h3>
-
             <div class="message-text">
-
               المحامين غالين ؟<br>
-
               راعي جريات؟<br>
-
               مصايبك كثير ؟<br>
-
               تحس ان السجن مو مكانك ؟<br>
-
               تحس ان مافي عدل ف هاذا المجتمع ؟
-
             </div>
-
             <div class="message-highlight">
               لا تشيللل هم<br>
               Better Call LLE
             </div>
-
             <div class="message-text">
               اي شي تحتاجه اتصل على هاذا الرقم
             </div>
-
             <div class="message-phone">
               سعر منافس واخلاص بالعمل
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- OFFICE -->
-
     <section id="office">
-
       <div class="container">
-
         <div class="section-kicker">
           LLE LAW OFFICE
         </div>
-
         <h2 class="section-title">
           مكتب LLE
         </h2>
-
         <p class="section-description">
           مقر المكتب الخاص بالمحامي LLE BADMAN.
         </p>
-
-
         <div class="office-card">
-
           <div class="office-icon">
-
             <img
-              src="images/IMG_9455.jpeg"
+              src="IMG_9455.jpeg"
               alt="مكتب LLE"
             >
-
           </div>
-
           <div class="office-details">
-
             <h3>
               LLE LAW OFFICE
             </h3>
-
             <p>
               للاستشارات والملفات المتعلقة بعالم
               LLE BADMAN.
             </p>
-
             <div class="address">
               📍 طريق الملك عبدالعزيز — حي الياسمين
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- CONTACT -->
-
     <section class="contact-section" id="contact">
-
       <div class="container">
-
         <div class="section-kicker">
           BETTER CALL LLE
         </div>
-
         <h2 class="section-title">
           تحتاج المحامي؟
         </h2>
-
         <p class="section-description">
           تواصل مع LLE عبر حساباته.
         </p>
-
-
         <div class="contact-buttons">
-
-
-          <!-- Snapchat -->
-
           <a
             class="button button-gold social"
             href="https://www.snapchat.com/"
@@ -1949,10 +1454,6 @@
           >
             Snapchat — LLE_98
           </a>
-
-
-          <!-- Twitter -->
-
           <a
             class="button button-dark social"
             href="https://twitter.com/"
@@ -1961,10 +1462,6 @@
           >
             Twitter — LLE_97
           </a>
-
-
-          <!-- Instagram -->
-
           <a
             class="button button-dark social"
             href="https://www.instagram.com/LLE_97/"
@@ -1973,10 +1470,6 @@
           >
             Instagram — LLE_97
           </a>
-
-
-          <!-- TikTok -->
-
           <a
             class="button button-dark social"
             href="https://www.tiktok.com/@lle97?_r=1&_t=ZS-99ZHh1y5HCZ"
@@ -1985,10 +1478,6 @@
           >
             TikTok — LLE97
           </a>
-
-
-          <!-- YouTube -->
-
           <a
             class="button button-dark social"
             href="https://www.youtube.com/@MrLLE99"
@@ -1997,10 +1486,6 @@
           >
             YouTube — MrLLE99
           </a>
-
-
-          <!-- Kick -->
-
           <a
             class="button button-dark social"
             href="https://kick.com/LLE"
@@ -2009,49 +1494,27 @@
           >
             Kick — LLE
           </a>
-
-
         </div>
-
       </div>
-
     </section>
-
   </main>
-
-
-  <!-- FOOTER -->
-
   <footer>
-
     <div class="container footer-inner">
-
       <div class="footer-brand">
         Better Call <span>LLE</span>
       </div>
-
       <div>
         LLE BADMAN © 2026
       </div>
-
       <div>
         OFFICIAL LLE ARCHIVE
       </div>
-
     </div>
-
   </footer>
-
-
-  <!-- JAVASCRIPT -->
-
   <script>
-
     function flipCase(card) {
       card.classList.toggle("flipped");
     }
-
   </script>
-
 </body>
 </html>
