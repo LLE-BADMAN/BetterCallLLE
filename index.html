@@ -12,6 +12,7 @@
   >
 
   <style>
+
     :root {
       --gold: #d6ad45;
       --gold-light: #f0d27a;
@@ -66,6 +67,7 @@
       margin: auto;
     }
 
+
     /* =========================
        TOP BAR
     ========================= */
@@ -84,6 +86,7 @@
       justify-content: space-between;
       gap: 15px;
     }
+
 
     /* =========================
        NAVIGATION
@@ -126,8 +129,15 @@
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.03),
         0 0 25px rgba(214,173,69,0.08);
-      font-family: Georgia, serif;
-      font-size: 22px;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .brand-text {
@@ -163,6 +173,7 @@
     .nav-links a:hover {
       color: var(--gold-light);
     }
+
 
     /* =========================
        HERO
@@ -320,6 +331,7 @@
       color: var(--gold-light);
     }
 
+
     /* =========================
        SECTION COMMON
     ========================= */
@@ -352,6 +364,7 @@
       max-width: 700px;
       font-size: 15px;
     }
+
 
     /* =========================
        LAWYER
@@ -390,14 +403,17 @@
       font-size: 180px;
       color: rgba(255,255,255,0.025);
       font-weight: bold;
+      pointer-events: none;
     }
 
-    .placeholder-label {
+    .lawyer-image-placeholder img {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      object-fit: cover;
+      display: block;
       position: relative;
       z-index: 2;
-      color: #666;
-      font-size: 12px;
-      letter-spacing: 1px;
     }
 
     .lawyer-info h3 {
@@ -425,6 +441,7 @@
       font-size: 25px;
       margin-top: 25px;
     }
+
 
     /* =========================
        CASES
@@ -512,6 +529,7 @@
       color: var(--gold-light);
     }
 
+
     /* =========================
        DEFENDANTS
     ========================= */
@@ -533,11 +551,17 @@
       padding: 35px 25px;
       text-align: center;
       position: relative;
+      transition: 0.25s ease;
+    }
+
+    .defendant:hover {
+      border-color: rgba(214,173,69,0.35);
+      transform: translateY(-4px);
     }
 
     .defendant-avatar {
-      width: 86px;
-      height: 86px;
+      width: 150px;
+      height: 150px;
       border: 1px solid rgba(214,173,69,0.35);
       border-radius: 50%;
       margin: 0 auto 20px;
@@ -547,6 +571,14 @@
       font-family: Georgia, serif;
       font-size: 28px;
       background: #0a0a0a;
+      overflow: hidden;
+    }
+
+    .defendant-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .defendant h3 {
@@ -559,6 +591,88 @@
       color: #777;
       font-size: 11px;
     }
+
+
+    /* =========================
+       FLIP CARD - ADEL
+    ========================= */
+
+    .flip-card {
+      perspective: 1200px;
+      padding: 0;
+      min-height: 390px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+
+    .flip-card:hover {
+      transform: none;
+      border-color: transparent;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 390px;
+      transition: transform 0.75s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 35px 25px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border: 1px solid var(--line);
+      background: #101010;
+      text-align: center;
+    }
+
+    .flip-card-front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flip-card-front small,
+    .flip-card-back small {
+      color: #666;
+      font-size: 10px;
+      margin-top: 15px;
+      display: block;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      overflow-y: auto;
+    }
+
+    .flip-card-back h3 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .flip-card-back p {
+      color: #999;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .flip-card-back .case-result {
+      text-align: right;
+    }
+
 
     /* =========================
        VIDEOS
@@ -637,30 +751,73 @@
       font-weight: 800;
     }
 
+
     /* =========================
-       GALLERY
+       MESSAGE
     ========================= */
 
     .gallery-box {
       margin-top: 50px;
       border: 1px dashed rgba(214,173,69,0.25);
-      min-height: 250px;
+      min-height: 350px;
       display: grid;
       place-items: center;
       text-align: center;
       background: #0c0c0c;
+      position: relative;
+      overflow: hidden;
     }
 
-    .gallery-box h3 {
+    .gallery-box::before {
+      content: "LLE";
+      position: absolute;
       font-family: Georgia, serif;
-      font-size: 25px;
-      margin-bottom: 5px;
+      font-size: 190px;
+      color: rgba(255,255,255,0.02);
+      font-weight: bold;
+      pointer-events: none;
     }
 
-    .gallery-box p {
-      color: #666;
-      font-size: 12px;
+    .lle-message {
+      position: relative;
+      z-index: 2;
+      padding: 45px 20px;
+      text-align: center;
+      width: 100%;
     }
+
+    .lle-message p {
+      color: #aaa;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .lle-message .highlight {
+      color: var(--gold-light);
+      font-size: 25px;
+      font-weight: 900;
+      margin-top: 10px;
+    }
+
+    .lle-message h3 {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin: 15px 0;
+    }
+
+    .lle-message .contact-message {
+      color: #ddd;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .lle-message .price-message {
+      color: var(--gold-light);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
 
     /* =========================
        OFFICE
@@ -690,6 +847,15 @@
       color: var(--gold);
       font-family: Georgia, serif;
       font-size: 70px;
+      overflow: hidden;
+    }
+
+    .office-icon img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      display: block;
     }
 
     .office-details h3 {
@@ -710,6 +876,7 @@
       color: #ccc;
       font-size: 14px;
     }
+
 
     /* =========================
        CONTACT
@@ -741,6 +908,7 @@
       min-width: 180px;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
@@ -769,6 +937,7 @@
     .footer-brand span {
       color: var(--gold);
     }
+
 
     /* =========================
        MOBILE
@@ -810,10 +979,20 @@
         min-height: 350px;
       }
 
+      .lawyer-image-placeholder img {
+        min-height: 350px;
+      }
+
       .office-card {
         padding: 22px;
       }
+
+      .defendant-avatar {
+        width: 140px;
+        height: 140px;
+      }
     }
+
 
     @media (max-width: 480px) {
 
@@ -840,55 +1019,124 @@
       .video-top {
         height: 150px;
       }
+
+      .lle-message h3 {
+        font-size: 30px;
+      }
+
+      .lle-message p {
+        font-size: 15px;
+      }
+
+      .flip-card {
+        min-height: 390px;
+      }
+
+      .flip-card-inner {
+        height: 390px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- TOP BAR -->
 
   <div class="top-bar">
+
     <div class="container top-bar-inner">
-      <span>CONFIDENTIAL • LLE BADMAN</span>
-      <span>BETTER CALL LLE</span>
+
+      <span>
+        CONFIDENTIAL • LLE BADMAN
+      </span>
+
+      <span>
+        BETTER CALL LLE
+      </span>
+
     </div>
+
   </div>
+
 
 
   <!-- NAVIGATION -->
 
   <nav>
+
     <div class="container nav-inner">
 
       <a href="#home" class="brand">
 
         <div class="brand-mark">
-          L
+
+          <img
+            src="lle-card.webp"
+            alt="Better Call LLE"
+          >
+
         </div>
 
         <div class="brand-text">
-          <strong>Better Call LLE</strong>
-          <small>LLE BADMAN</small>
+
+          <strong>
+            Better Call LLE
+          </strong>
+
+          <small>
+            LLE BADMAN
+          </small>
+
         </div>
 
       </a>
 
+
       <div class="nav-links">
-        <a href="#lawyer">المحامي</a>
-        <a href="#cases">القضايا</a>
-        <a href="#videos">المقاطع</a>
-        <a href="#defendants">المتهمون</a>
-        <a href="#office">المكتب</a>
+
+        <a href="#lawyer">
+          المحامي
+        </a>
+
+        <a href="#cases">
+          القضايا
+        </a>
+
+        <a href="#videos">
+          المقاطع
+        </a>
+
+        <a href="#defendants">
+          المتهمون
+        </a>
+
+        <a href="#gallery">
+          رسالة للي
+        </a>
+
+        <a href="#office">
+          المكتب
+        </a>
+
       </div>
 
     </div>
+
   </nav>
+
 
 
   <main>
 
-    <!-- HERO -->
+
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero" id="home">
 
@@ -906,19 +1154,28 @@
           </h1>
 
           <p class="hero-subtitle">
+
             <strong>LLE BADMAN</strong>
             — محامي القضايا الصعبة.
             هنا تجد ملفات القضايا، المتهمين،
             أبرز الظهورات والمقاطع المرتبطة بعالم LLE.
+
           </p>
+
 
           <div class="hero-buttons">
 
-            <a href="#cases" class="button button-gold">
+            <a
+              href="#cases"
+              class="button button-gold"
+            >
               استعرض القضايا
             </a>
 
-            <a href="#lawyer" class="button button-dark">
+            <a
+              href="#lawyer"
+              class="button button-dark"
+            >
               تعرف على المحامي
             </a>
 
@@ -931,7 +1188,10 @@
     </section>
 
 
-    <!-- LAWYER -->
+
+    <!-- =========================
+         LAWYER
+    ========================= -->
 
     <section id="lawyer">
 
@@ -953,12 +1213,15 @@
 
         <div class="lawyer-grid">
 
+
+          <!-- صورة المحامي -->
+
           <div class="lawyer-image-placeholder">
 
-            <div class="placeholder-label">
-              صورة LLE BADMAN<br>
-              ستتم إضافتها هنا
-            </div>
+            <img
+              src="lle-lawyer.jpeg"
+              alt="LLE BADMAN"
+            >
 
           </div>
 
@@ -998,7 +1261,10 @@
     </section>
 
 
-    <!-- CASES -->
+
+    <!-- =========================
+         CASES
+    ========================= -->
 
     <section id="cases">
 
@@ -1043,12 +1309,18 @@
             </p>
 
             <div class="case-result">
-              <strong>النتيجة:</strong>
-              تم سجن المتهم عادل،
+
+              <strong>
+                النتيجة:
+              </strong>
+
+              تم سجن عادل،
               وسُجن وسُحبت رخصة المحامي LLE.
+
             </div>
 
           </article>
+
 
 
           <!-- CASE 02 -->
@@ -1074,11 +1346,17 @@
             </p>
 
             <div class="case-result">
-              <strong>النتيجة:</strong>
+
+              <strong>
+                النتيجة:
+              </strong>
+
               تم تلبية الاستشارة وتقديم خدمات المحامي.
+
             </div>
 
           </article>
+
 
 
           <!-- CASE 03 -->
@@ -1090,7 +1368,7 @@
             </div>
 
             <h3>
-              المتهم المدير أودين
+              المدير أودين
             </h3>
 
             <div class="case-status">
@@ -1103,8 +1381,13 @@
             </p>
 
             <div class="case-result">
-              <strong>النتيجة:</strong>
+
+              <strong>
+                النتيجة:
+              </strong>
+
               يتم التعامل مع القضية حتى الآن.
+
             </div>
 
           </article>
@@ -1117,9 +1400,15 @@
     </section>
 
 
-    <!-- DEFENDANTS -->
 
-    <section class="defendants" id="defendants">
+    <!-- =========================
+         DEFENDANTS
+    ========================= -->
+
+    <section
+      class="defendants"
+      id="defendants"
+    >
 
       <div class="container">
 
@@ -1139,31 +1428,109 @@
         <div class="defendant-grid">
 
 
-          <div class="defendant">
+          <!-- =====================
+               ADEL FLIP CARD
+          ====================== -->
 
-            <div class="defendant-avatar">
-              ع
+          <div
+            class="defendant flip-card"
+            id="adel-card"
+          >
+
+            <div class="flip-card-inner">
+
+
+              <!-- FRONT -->
+
+              <div class="flip-card-front">
+
+                <div class="defendant-avatar">
+
+                  <img
+                    src="adel.jpeg"
+                    alt="عادل"
+                  >
+
+                </div>
+
+                <h3>
+                  عادل
+                </h3>
+
+                <p>
+                  CASE 001
+                </p>
+
+                <small>
+                  اضغط لقلب الصفحة
+                </small>
+
+              </div>
+
+
+
+              <!-- BACK -->
+
+              <div class="flip-card-back">
+
+                <div class="case-number">
+                  CASE 001
+                </div>
+
+                <h3>
+                  قضية عادل
+                </h3>
+
+                <div class="case-status">
+                  CLOSED
+                </div>
+
+                <p>
+                  اتهام بصدم إنسان مما أدى إلى وفاته.
+                  تم عرض خدمات LLE للدفاع عن عادل.
+                </p>
+
+                <div class="case-result">
+
+                  <strong>
+                    النتيجة:
+                  </strong>
+
+                  تم سجن عادل،
+                  وسُجن وسُحبت رخصة المحامي LLE.
+
+                </div>
+
+                <small>
+                  اضغط للعودة
+                </small>
+
+              </div>
+
+
             </div>
-
-            <h3>
-              عادل
-            </h3>
-
-            <p>
-              CASE 001
-            </p>
 
           </div>
 
 
+
+          <!-- =====================
+               ODIN
+          ====================== -->
+
           <div class="defendant">
 
             <div class="defendant-avatar">
-              أ
+
+              <img
+                src="odin.jpeg"
+                alt="المدير أودين"
+              >
+
             </div>
 
             <h3>
-              أودين
+              المدير أودين
             </h3>
 
             <p>
@@ -1173,10 +1540,20 @@
           </div>
 
 
+
+          <!-- =====================
+               SHAWARMA TEACHER
+          ====================== -->
+
           <div class="defendant">
 
             <div class="defendant-avatar">
-              ش
+
+              <img
+                src="shawarma.jpeg"
+                alt="معلم الشاورما"
+              >
+
             </div>
 
             <h3>
@@ -1197,7 +1574,10 @@
     </section>
 
 
-    <!-- VIDEOS -->
+
+    <!-- =========================
+         VIDEOS
+    ========================= -->
 
     <section id="videos">
 
@@ -1225,9 +1605,11 @@
           <article class="video-card">
 
             <div class="video-top">
+
               <div class="play">
                 ▶
               </div>
+
             </div>
 
             <div class="video-info">
@@ -1241,7 +1623,7 @@
               </h3>
 
               <p>
-                ظهور LLE لتقديم خدماته والدفاع عن المتهم عادل.
+                ظهور LLE لتقديم خدماته والدفاع عن عادل.
               </p>
 
               <a
@@ -1258,14 +1640,17 @@
           </article>
 
 
+
           <!-- VIDEO 02 -->
 
           <article class="video-card">
 
             <div class="video-top">
+
               <div class="play">
                 ▶
               </div>
+
             </div>
 
             <div class="video-info">
@@ -1275,7 +1660,7 @@
               </div>
 
               <h3>
-                الدفاع عن المتهم عادل
+                الدفاع عن عادل
               </h3>
 
               <p>
@@ -1296,14 +1681,17 @@
           </article>
 
 
+
           <!-- VIDEO 03 -->
 
           <article class="video-card">
 
             <div class="video-top">
+
               <div class="play">
                 ▶
               </div>
+
             </div>
 
             <div class="video-info">
@@ -1334,14 +1722,17 @@
           </article>
 
 
+
           <!-- VIDEO 04 -->
 
           <article class="video-card">
 
             <div class="video-top">
+
               <div class="play">
                 ▶
               </div>
+
             </div>
 
             <div class="video-info">
@@ -1379,35 +1770,66 @@
     </section>
 
 
-    <!-- GALLERY -->
+
+    <!-- =========================
+         MESSAGE
+    ========================= -->
 
     <section id="gallery">
 
       <div class="container">
 
         <div class="section-kicker">
-          EVIDENCE ROOM
+          BETTER CALL LLE
         </div>
 
         <h2 class="section-title">
-          معرض الصور
+          رسالة للي
         </h2>
-
-        <p class="section-description">
-          أرشيف الصور الخاص بـ LLE BADMAN والقضايا.
-        </p>
 
 
         <div class="gallery-box">
 
-          <div>
-
-            <h3>
-              PHOTO ARCHIVE
-            </h3>
+          <div class="lle-message">
 
             <p>
-              سيتم إضافة صور LLE وبطاقة Better Call LLE هنا.
+              المحامين غالين ؟
+            </p>
+
+            <p>
+              راعي جريات؟
+            </p>
+
+            <p>
+              مصايبك كثير ؟
+            </p>
+
+            <p>
+              تحس ان السجن مو مكانك
+            </p>
+
+            <p>
+              تحس ان مافي عدل ف هاذا المجتمع
+            </p>
+
+
+            <p class="highlight">
+              لا تشيللل هم
+            </p>
+
+
+            <h3>
+              Better Call LLE
+            </h3>
+
+
+            <p class="contact-message">
+              اي شي تحتاجه اتصل على هاذا الرقم
+            </p>
+
+
+            <p class="price-message">
+              سعر منافس واخلاص بالعمل
             </p>
 
           </div>
@@ -1419,7 +1841,10 @@
     </section>
 
 
-    <!-- OFFICE -->
+
+    <!-- =========================
+         OFFICE
+    ========================= -->
 
     <section id="office">
 
@@ -1440,9 +1865,16 @@
 
         <div class="office-card">
 
+
           <div class="office-icon">
-            ⚖
+
+            <img
+              src="lle-office.jpeg"
+              alt="مكتب LLE"
+            >
+
           </div>
+
 
           <div class="office-details">
 
@@ -1468,9 +1900,15 @@
     </section>
 
 
-    <!-- CONTACT -->
 
-    <section class="contact-section" id="contact">
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+      class="contact-section"
+      id="contact"
+    >
 
       <div class="container">
 
@@ -1489,6 +1927,7 @@
 
         <div class="contact-buttons">
 
+
           <a
             class="button button-gold social"
             href="https://www.snapchat.com/"
@@ -1497,6 +1936,7 @@
           >
             Snapchat — LLE_98
           </a>
+
 
           <a
             class="button button-dark social"
@@ -1507,16 +1947,21 @@
             Twitter — LLE_97
           </a>
 
+
         </div>
 
       </div>
 
     </section>
 
+
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -1537,6 +1982,29 @@
     </div>
 
   </footer>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const flipCard = document.getElementById("adel-card");
+
+    if (flipCard) {
+
+      flipCard.addEventListener("click", function () {
+
+        this.classList.toggle("flipped");
+
+      });
+
+    }
+
+  </script>
+
 
 </body>
 </html>
