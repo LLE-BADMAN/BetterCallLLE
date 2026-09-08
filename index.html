@@ -113,7 +113,7 @@
       font-weight: 900;
     }
 
-    /* بطاقة Better Call LLE فوق مكان حرف L */
+    /* صورة الكارد */
     .brand-mark {
       width: 52px;
       height: 52px;
@@ -178,25 +178,23 @@
       overflow: hidden;
       display: flex;
       align-items: center;
+
       background:
-        radial-gradient(
-          circle at 75% 40%,
-          rgba(214,173,69,0.09),
-          transparent 30%
-        ),
         linear-gradient(
-          135deg,
-          #080808 0%,
-          #101010 50%,
-          #080808 100%
-        );
+          90deg,
+          rgba(8,8,8,0.95) 0%,
+          rgba(8,8,8,0.82) 45%,
+          rgba(8,8,8,0.45) 100%
+        ),
+        url("images/IMG_9459.jpeg") center/cover no-repeat;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.16;
+      opacity: 0.13;
+
       background-image:
         linear-gradient(
           rgba(255,255,255,0.035) 1px,
@@ -207,7 +205,9 @@
           rgba(255,255,255,0.035) 1px,
           transparent 1px
         );
+
       background-size: 55px 55px;
+
       mask-image: linear-gradient(
         to bottom,
         black,
@@ -224,6 +224,7 @@
       border: 1px solid rgba(214,173,69,0.07);
       right: -180px;
       bottom: -200px;
+
       box-shadow:
         0 0 0 60px rgba(214,173,69,0.025),
         0 0 0 120px rgba(214,173,69,0.015);
@@ -390,12 +391,14 @@
       content: "";
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to top,
           rgba(0,0,0,0.35),
           transparent 45%
         );
+
       pointer-events: none;
     }
 
@@ -443,6 +446,7 @@
           rgba(255,255,255,0.055),
           rgba(255,255,255,0.015)
         );
+
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 27px;
@@ -526,32 +530,64 @@
       margin-top: 50px;
     }
 
+    /*
+      بطاقة القضية ذات الوجهين
+    */
+
     .defendant {
-      border: 1px solid var(--line);
-      background: #101010;
-      padding: 0 0 25px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      perspective: 1200px;
+      height: 480px;
       cursor: pointer;
-      transition: 0.3s ease;
+      position: relative;
     }
 
-    .defendant:hover {
-      transform: translateY(-5px);
+    .defendant-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(.2,.75,.25,1);
+      transform-style: preserve-3d;
+    }
+
+    .defendant.flipped .defendant-inner {
+      transform: rotateY(180deg);
+    }
+
+    .defendant-front,
+    .defendant-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid var(--line);
+      background: #101010;
+      overflow: hidden;
+
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .defendant-front {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .defendant-front:hover {
       border-color: rgba(214,173,69,0.45);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     }
 
     .defendant-avatar {
       width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 0;
-      margin: 0 0 20px;
+      height: 340px;
       display: block;
       overflow: hidden;
       background: #080808;
+      flex-shrink: 0;
     }
 
     .defendant-avatar img {
@@ -563,18 +599,19 @@
       transition: 0.4s ease;
     }
 
-    .defendant:hover .defendant-avatar img {
+    .defendant-front:hover .defendant-avatar img {
       transform: scale(1.04);
     }
 
-    .defendant h3 {
+    .defendant-front h3 {
       font-family: Georgia, serif;
-      font-size: 22px;
-      margin-bottom: 6px;
+      font-size: 23px;
+      margin-top: 18px;
+      margin-bottom: 3px;
       padding: 0 15px;
     }
 
-    .defendant p {
+    .defendant-front p {
       color: #777;
       font-size: 11px;
     }
@@ -582,58 +619,80 @@
     .click-hint {
       color: var(--gold);
       font-size: 10px;
-      margin-top: 10px;
+      margin-top: 8px;
       opacity: 0.8;
     }
 
-    /* =========================
-       CASE POPUP / DETAILS
-    ========================= */
+    /* الوجه الخلفي */
 
-    .case-details {
-      display: none;
-      margin-top: 20px;
-      padding: 20px;
-      border-top: 1px solid rgba(214,173,69,0.2);
-      background: rgba(214,173,69,0.025);
+    .defendant-back {
+      transform: rotateY(180deg);
+      padding: 28px;
       text-align: right;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(214,173,69,0.08),
+          transparent 60%
+        ),
+        #0d0d0d;
     }
 
-    .case-details.active {
-      display: block;
-      animation: showCase 0.3s ease;
-    }
-
-    @keyframes showCase {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .case-details-title {
-      color: var(--gold-light);
+    .file-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
       font-weight: 900;
-      font-size: 13px;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
-    .case-details p {
-      color: #999;
+    .defendant-back h3 {
+      font-family: Georgia, serif;
+      color: var(--gold-light);
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .back-status {
+      display: inline-block;
+      align-self: flex-start;
+      border: 1px solid rgba(214,173,69,0.3);
+      color: #aaa;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+
+    .defendant-back p {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+
+    .back-result {
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: #bbb;
       font-size: 12px;
       line-height: 1.9;
     }
 
-    .case-details-result {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      color: #bbb;
-      font-size: 11px;
+    .back-result strong {
+      color: var(--gold-light);
+    }
+
+    .flip-hint {
+      margin-top: 22px;
+      color: #666;
+      font-size: 10px;
+      text-align: center;
     }
 
     /* =========================
@@ -662,6 +721,7 @@
       height: 175px;
       display: grid;
       place-items: center;
+
       background:
         radial-gradient(
           circle,
@@ -669,6 +729,7 @@
           transparent 45%
         ),
         #080808;
+
       border-bottom: 1px solid var(--line);
       position: relative;
     }
@@ -720,6 +781,7 @@
     .message-box {
       margin-top: 50px;
       border: 1px solid rgba(214,173,69,0.28);
+
       background:
         radial-gradient(
           circle at center,
@@ -727,6 +789,7 @@
           transparent 55%
         ),
         #0c0c0c;
+
       padding: 55px 35px;
       text-align: center;
       position: relative;
@@ -786,12 +849,14 @@
     .office-card {
       margin-top: 50px;
       border: 1px solid var(--line);
+
       background:
         linear-gradient(
           135deg,
           #111,
           #0b0b0b
         );
+
       padding: 40px;
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -838,6 +903,7 @@
 
     .contact-section {
       text-align: center;
+
       background:
         radial-gradient(
           circle at center,
@@ -943,6 +1009,10 @@
         padding: 22px;
       }
 
+      .defendant {
+        height: 500px;
+      }
+
       .defendant-avatar {
         height: 350px;
       }
@@ -991,8 +1061,24 @@
         font-size: 24px;
       }
 
+      .defendant {
+        height: 490px;
+      }
+
       .defendant-avatar {
         height: 320px;
+      }
+
+      .defendant-back {
+        padding: 23px;
+      }
+
+      .defendant-back h3 {
+        font-size: 23px;
+      }
+
+      .defendant-back p {
+        font-size: 12px;
       }
     }
   </style>
@@ -1018,7 +1104,10 @@
       <a href="#home" class="brand">
 
         <div class="brand-mark">
-          <img src="images/card.jpg" alt="Better Call LLE">
+          <img
+            src="images/IMG_9448.webp"
+            alt="Better Call LLE"
+          >
         </div>
 
         <div class="brand-text">
@@ -1112,7 +1201,7 @@
           <div class="lawyer-image">
 
             <img
-              src="images/lle.jpg"
+              src="images/IMG_9459.jpeg"
               alt="LLE BADMAN"
             >
 
@@ -1255,7 +1344,7 @@
 
             <p>
               تم خداع المدير محمد أودين من قبل موظفه
-              الأستاذ دربحه وتوقيعه على مستندات تتهمه.
+              دربحة وتوقيعه على مستندات تتهمه.
             </p>
 
             <div class="case-result">
@@ -1273,7 +1362,7 @@
     </section>
 
 
-    <!-- DEFENDANTS / CASE SUBJECTS -->
+    <!-- DEFENDANTS -->
 
     <section class="defendants" id="defendants">
 
@@ -1288,7 +1377,7 @@
         </h2>
 
         <p class="section-description">
-          اضغط على أي شخصية لعرض القضية المرتبطة بها.
+          اضغط على الملف ليقلب ويظهر وجه القضية.
         </p>
 
 
@@ -1299,49 +1388,71 @@
 
           <div
             class="defendant"
-            onclick="toggleCase('adel-case')"
+            onclick="flipCase(this)"
             role="button"
             tabindex="0"
-            onkeydown="if(event.key==='Enter') toggleCase('adel-case')"
+            onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
 
-            <div class="defendant-avatar">
-              <img
-                src="images/adel.jpg"
-                alt="عادل"
-              >
-            </div>
+            <div class="defendant-inner">
 
-            <h3>
-              عادل
-            </h3>
+              <!-- FRONT -->
 
-            <p>
-              CASE 001
-            </p>
+              <div class="defendant-front">
 
-            <div class="click-hint">
-              اضغط لعرض القضية ↓
-            </div>
+                <div class="defendant-avatar">
+                  <img
+                    src="images/IMG_9456.jpeg"
+                    alt="عادل"
+                  >
+                </div>
 
-            <div
-              class="case-details"
-              id="adel-case"
-            >
+                <h3>
+                  عادل
+                </h3>
 
-              <div class="case-details-title">
-                قضية عادل — CASE 001
+                <p>
+                  CASE 001
+                </p>
+
+                <div class="click-hint">
+                  اضغط لقلب الملف
+                </div>
+
               </div>
 
-              <p>
-                اتهام بصدم إنسان مما أدى إلى وفاته.
-                تم عرض خدمات LLE للدفاع عن عادل
-                والتعامل مع القضية.
-              </p>
 
-              <div class="case-details-result">
-                <strong>النتيجة:</strong>
-                تم سجن عادل، وسُجن وسُحبت رخصة المحامي LLE.
+              <!-- BACK -->
+
+              <div class="defendant-back">
+
+                <div class="file-label">
+                  CASE FILE • 001
+                </div>
+
+                <h3>
+                  قضية عادل
+                </h3>
+
+                <div class="back-status">
+                  CLOSED
+                </div>
+
+                <p>
+                  اتهام بصدم إنسان مما أدى إلى وفاته.
+                  تم عرض خدمات LLE للدفاع عن عادل
+                  والتعامل مع القضية.
+                </p>
+
+                <div class="back-result">
+                  <strong>النتيجة:</strong>
+                  تم سجن عادل، وسُجن وسُحبت رخصة المحامي LLE.
+                </div>
+
+                <div class="flip-hint">
+                  اضغط للعودة إلى صورة الشخصية
+                </div>
+
               </div>
 
             </div>
@@ -1353,48 +1464,70 @@
 
           <div
             class="defendant"
-            onclick="toggleCase('odin-case')"
+            onclick="flipCase(this)"
             role="button"
             tabindex="0"
-            onkeydown="if(event.key==='Enter') toggleCase('odin-case')"
+            onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
 
-            <div class="defendant-avatar">
-              <img
-                src="images/odin.jpg"
-                alt="المدير أودين"
-              >
-            </div>
+            <div class="defendant-inner">
 
-            <h3>
-              المدير أودين
-            </h3>
+              <!-- FRONT -->
 
-            <p>
-              CASE 003
-            </p>
+              <div class="defendant-front">
 
-            <div class="click-hint">
-              اضغط لعرض القضية ↓
-            </div>
+                <div class="defendant-avatar">
+                  <img
+                    src="images/IMG_9457.jpeg"
+                    alt="المدير أودين"
+                  >
+                </div>
 
-            <div
-              class="case-details"
-              id="odin-case"
-            >
+                <h3>
+                  المدير أودين
+                </h3>
 
-              <div class="case-details-title">
-                قضية المدير أودين — CASE 003
+                <p>
+                  CASE 003
+                </p>
+
+                <div class="click-hint">
+                  اضغط لقلب الملف
+                </div>
+
               </div>
 
-              <p>
-                تم خداع المدير محمد أودين من قبل موظفه
-                الأستاذ دربحه وتوقيعه على مستندات تتهمه.
-              </p>
 
-              <div class="case-details-result">
-                <strong>النتيجة:</strong>
-                يتم التعامل مع القضية حتى الآن.
+              <!-- BACK -->
+
+              <div class="defendant-back">
+
+                <div class="file-label">
+                  CASE FILE • 003
+                </div>
+
+                <h3>
+                  قضية المدير أودين
+                </h3>
+
+                <div class="back-status">
+                  ONGOING
+                </div>
+
+                <p>
+                  تم خداع المدير محمد أودين من قبل موظفه
+                  دربحة وتوقيعه على مستندات تتهمه.
+                </p>
+
+                <div class="back-result">
+                  <strong>النتيجة:</strong>
+                  يتم التعامل مع القضية حتى الآن.
+                </div>
+
+                <div class="flip-hint">
+                  اضغط للعودة إلى صورة الشخصية
+                </div>
+
               </div>
 
             </div>
@@ -1406,49 +1539,71 @@
 
           <div
             class="defendant"
-            onclick="toggleCase('shawarma-case')"
+            onclick="flipCase(this)"
             role="button"
             tabindex="0"
-            onkeydown="if(event.key==='Enter') toggleCase('shawarma-case')"
+            onkeydown="if(event.key==='Enter' || event.key===' ') flipCase(this)"
           >
 
-            <div class="defendant-avatar">
-              <img
-                src="images/shawarma.jpg"
-                alt="معلم الشاورما"
-              >
-            </div>
+            <div class="defendant-inner">
 
-            <h3>
-              معلم الشاورما
-            </h3>
+              <!-- FRONT -->
 
-            <p>
-              CASE 002
-            </p>
+              <div class="defendant-front">
 
-            <div class="click-hint">
-              اضغط لعرض القضية ↓
-            </div>
+                <div class="defendant-avatar">
+                  <img
+                    src="images/IMG_9458.jpeg"
+                    alt="معلم الشاورما"
+                  >
+                </div>
 
-            <div
-              class="case-details"
-              id="shawarma-case"
-            >
+                <h3>
+                  معلم الشاورما
+                </h3>
 
-              <div class="case-details-title">
-                استشارة معلم الشاورما — CASE 002
+                <p>
+                  CASE 002
+                </p>
+
+                <div class="click-hint">
+                  اضغط لقلب الملف
+                </div>
+
               </div>
 
-              <p>
-                في ظل مواجهة معلم الشاورما لمحبي الشاورما
-                وتوجيه السلاح في وجهه، طلب معلم الشاورما
-                استشارة المحامي LLE.
-              </p>
 
-              <div class="case-details-result">
-                <strong>النتيجة:</strong>
-                تم تلبية الاستشارة وتقديم خدمات المحامي.
+              <!-- BACK -->
+
+              <div class="defendant-back">
+
+                <div class="file-label">
+                  CASE FILE • 002
+                </div>
+
+                <h3>
+                  استشارة معلم الشاورما
+                </h3>
+
+                <div class="back-status">
+                  CONSULTATION
+                </div>
+
+                <p>
+                  في ظل مواجهة معلم الشاورما لمحبي الشاورما
+                  وتوجيه السلاح في وجهه، طلب معلم الشاورما
+                  استشارة المحامي LLE.
+                </p>
+
+                <div class="back-result">
+                  <strong>النتيجة:</strong>
+                  تم تلبية الاستشارة وتقديم خدمات المحامي.
+                </div>
+
+                <div class="flip-hint">
+                  اضغط للعودة إلى صورة الشخصية
+                </div>
+
               </div>
 
             </div>
@@ -1732,7 +1887,7 @@
           <div class="office-icon">
 
             <img
-              src="images/office.jpg"
+              src="images/IMG_9455.jpeg"
               alt="مكتب LLE"
             >
 
@@ -1824,7 +1979,7 @@
 
           <a
             class="button button-dark social"
-            href="https://www.tiktok.com/@LLE97"
+            href="https://www.tiktok.com/@lle97?_r=1&_t=ZS-99ZHh1y5HCZ"
             target="_blank"
             rel="noopener"
           >
@@ -1888,32 +2043,12 @@
   </footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+  <!-- JAVASCRIPT -->
 
   <script>
 
-    function toggleCase(caseId) {
-
-      const selectedCase = document.getElementById(caseId);
-
-      if (!selectedCase) {
-        return;
-      }
-
-      const allCases = document.querySelectorAll(".case-details");
-
-      allCases.forEach(function(item) {
-
-        if (item !== selectedCase) {
-          item.classList.remove("active");
-        }
-
-      });
-
-      selectedCase.classList.toggle("active");
-
+    function flipCase(card) {
+      card.classList.toggle("flipped");
     }
 
   </script>
